@@ -55,6 +55,8 @@ export function Form({
       (await FileSystem.readAsStringAsync(screenshot, { encoding: "base64" }));
 
     try {
+      console.log(api.getUri());
+
       await api.post("/feedbacks", {
         type: feedbackType,
         screenshot: `data:image/png;base64, ${screenshotBase64}`,
